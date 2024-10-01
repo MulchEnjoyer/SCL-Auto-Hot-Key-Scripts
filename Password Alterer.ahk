@@ -11,21 +11,23 @@ SpreadsheetLogoX := 40
 SpreadsheetLogoY := 141
 SpreadsheetLogoColor := 0x00AC47
 
+; Password Reset Status Cell Check
 RowStatusX := 738
 RowStatusY := 1284
 YellowColor := 0xFFFF00
 GreenColor := 0xB7E1CD
 
+; Password Select Cell Check
 TabBoxX := 657
 TabBoxY := 1276
 TabBoxColor := 0x1A73E8
 
-; Updated Check 4: Ensure Correct Cell is Selected
+; Website Select Cell Check Ensure Correct Cell is Selected
 CellSelectionX := 474    ; Updated X coordinate
 CellSelectionY := 1309   ; Updated Y coordinate
 CellSelectionColor := 0x1A73E8  ; Updated color
 
-; Define website load colors separately for compatibility
+; Unique Spots on Oura Password Reset
 WebsiteLoadColor1X := 1968
 WebsiteLoadColor1Y := 1311
 WebsiteLoadColor1 := 0xADB7CC
@@ -38,11 +40,11 @@ WebsiteLoadColor3X := 377
 WebsiteLoadColor3Y := 620
 WebsiteLoadColor3 := 0x8D9DB5
 
-; **New Addition:** Additional pixel to verify website load
 WebsiteLoadColor4X := 1920
 WebsiteLoadColor4Y := 733
 WebsiteLoadColor4 := 0xEFEBE5
 
+; Unique Spot after Oura Password Reset
 DataEntryX := 224
 DataEntryY := 533
 DataEntryColor := 0x2F4A73
@@ -62,31 +64,6 @@ global running := false         ; Flag to indicate if the script is running
 
 CoordMode, Pixel, Screen
 CoordMode, Mouse, Screen
-
-; ============================
-; ===== GUI Setup =====
-; ============================
-
-; Top-Left GUI for Status Indicator
-Gui, +AlwaysOnTop +ToolWindow -Caption +E0x80000 ; E0x80000 makes it click-through
-Gui, Color, Red                ; Initial color (Red - Stopped)
-Gui, Show, x0 y0 w20 h20, ScriptStatus  ; Position at top-left corner
-
-; Bottom-Right GUI for Step Information
-; Get screen dimensions
-SysGet, ScreenWidth, 78
-SysGet, ScreenHeight, 79
-
-StepGuiWidth := 300
-StepGuiHeight := 50
-
-x_pos := ScreenWidth - StepGuiWidth
-y_pos := ScreenHeight - StepGuiHeight
-
-Gui, StepStatus:New, +AlwaysOnTop +ToolWindow -Caption
-Gui, StepStatus:Color, Black
-Gui, StepStatus:Add, Text, cWhite Center w%StepGuiWidth% h%StepGuiHeight% vStepText, Step: Not Running
-Gui, StepStatus:Show, x%x_pos% y%y_pos% w%StepGuiWidth% h%StepGuiHeight%, StepStatus
 
 ; ============================
 ; ===== Hotkey Definitions =====
@@ -119,13 +96,13 @@ Gui, StepStatus:Show, x%x_pos% y%y_pos% w%StepGuiWidth% h%StepGuiHeight%, StepSt
 ; ===== Function Definitions =====
 ; ============================
 
-; Function to set the GUI color (Top-Left Indicator)
+; Function to set the GUI color (Top-Left Indicator) (I took this out but I don't want to take it out of the code just in case it breaks)
 SetGUIColor(color)
 {
     Gui, ScriptStatus:Color, % color
 }
 
-; Function to update the step status (Bottom-Right Indicator) and log the step
+; Function to update the step status (Bottom-Right Indicator) and log the step (I took this out but I don't want to take it out of the code just in case it breaks)
 UpdateStepStatus(text)
 {
     GuiControl,, StepText, % "Step: " . text
