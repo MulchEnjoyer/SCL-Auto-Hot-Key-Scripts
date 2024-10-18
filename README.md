@@ -1,5 +1,5 @@
-# OuraPasswordResetAHK
-A macro intended to be used to reset passwords and pull apis based off a spreadsheet.
+# Worker Bee Macros
+Macros intended to be used to reset passwords and pull apis based off a spreadsheet.
 Below is the config adjust as required, note that the pixel detection was created with the following settings, use AHK window spy to reconfigure.
 Software: Chrome on Windows 10 100% Zoom
 Hardware: 2k screen
