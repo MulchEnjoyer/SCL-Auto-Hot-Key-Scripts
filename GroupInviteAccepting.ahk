@@ -123,9 +123,9 @@ RunScript() {
     Sleep, 100
     Send ^v ; Control + V to paste the data
     Sleep, 100
-    Click ; Perform a click action
+    MouseClick, Left, 831, 554 ; Perform a click action
     Sleep, 100
-    Click ; Perform a second click action
+    Mouseclick, Left, 1646, 875 ; Perform a second click action
     Sleep, 100
 
     ; Step 12: Check Share Data Page Again
@@ -147,9 +147,9 @@ RunScript() {
 
     ; Step 15: Sign Out
     StepIndicator("Action: Sign Out")
-    Click ; Click to sign out
+    MouseClick, Left, 2450, 229; Click to sign out
     Sleep, 100
-    Click ; Confirm the sign-out
+    MouseClick, Left, 2328,418; Confirm the sign-out
     Sleep, 100
 
     ; Step 16: Check Oura Login Page Again
